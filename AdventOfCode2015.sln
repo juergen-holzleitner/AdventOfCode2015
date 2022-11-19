@@ -5,6 +5,8 @@ VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01-NotQuiteLisp", "01-NotQuiteLisp\01-NotQuiteLisp.csproj", "{B9CC7A14-71E4-4DBE-8828-A1DF1CB7E0C9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02-NoMath", "02-NoMath\02-NoMath.csproj", "{092FC1D4-FC29-4332-BDAF-1874D4E1CC87}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{B9CC7A14-71E4-4DBE-8828-A1DF1CB7E0C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B9CC7A14-71E4-4DBE-8828-A1DF1CB7E0C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B9CC7A14-71E4-4DBE-8828-A1DF1CB7E0C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{092FC1D4-FC29-4332-BDAF-1874D4E1CC87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{092FC1D4-FC29-4332-BDAF-1874D4E1CC87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{092FC1D4-FC29-4332-BDAF-1874D4E1CC87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{092FC1D4-FC29-4332-BDAF-1874D4E1CC87}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
