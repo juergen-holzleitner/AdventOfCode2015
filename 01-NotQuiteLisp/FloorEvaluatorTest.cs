@@ -13,5 +13,15 @@ namespace _01_NotQuiteLisp
 
       startingFloor.Should().Be(0);
     }
+
+    [Fact]
+    public void Can_get_up_one_floor()
+    {
+      var sut = new FloorEvaluator();
+      
+      sut.ProcessInput("(");
+
+      sut.GetFloor().Should().Be(1);
+    }
   }
 }

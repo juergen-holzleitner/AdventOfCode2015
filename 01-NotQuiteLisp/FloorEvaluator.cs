@@ -8,9 +8,16 @@ namespace _01_NotQuiteLisp
 {
   internal class FloorEvaluator
   {
+    private int _currentFloor = 0;
+
     internal object GetFloor()
     {
-      return 0;
+      return _currentFloor;
+    }
+
+    internal void ProcessInput(string input)
+    {
+      _currentFloor = 1;
     }
   }
 }
