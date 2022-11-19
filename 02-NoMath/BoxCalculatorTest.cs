@@ -15,5 +15,17 @@ namespace _02_NoMath
 
       required.Should().Be(expectedResult);
     }
+
+    [Theory]
+    [InlineData(2, 3, 4, 34)]
+    [InlineData(1, 1, 10, 14)]
+    public void Can_calculate_ribbon(int l, int w, int h, int expectedResult)
+    {
+      var sut = new BoxCalculator();
+
+      var required = sut.CalculateRibbon(l, w, h);
+
+      required.Should().Be(expectedResult);
+    }
   }
 }

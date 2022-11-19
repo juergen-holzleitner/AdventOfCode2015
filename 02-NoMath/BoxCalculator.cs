@@ -15,5 +15,13 @@ namespace _02_NoMath
 
       return wrappingPaper + slack;
     }
+
+    internal int CalculateRibbon(int l, int w, int h)
+    {
+      var bow = l * w * h;
+      var ribbon = Math.Min(Math.Min(2*(l + w), 2*(l + h)), 2*(w + h));
+
+      return bow + ribbon;
+    }
   }
 }
