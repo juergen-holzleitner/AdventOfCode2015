@@ -14,14 +14,25 @@ namespace _01_NotQuiteLisp
       startingFloor.Should().Be(0);
     }
 
-    [Fact]
-    public void Can_get_up_one_floor()
+    [Theory]
+    [InlineData("(", 1)]
+    [InlineData(")", -1)]
+    [InlineData("(())", 0)]
+    [InlineData("()()", 0)]
+    [InlineData("(((", 3)]
+    [InlineData("(()(()(", 3)]
+    [InlineData("))(((((", 3)]
+    [InlineData("())", -1)]
+    [InlineData("))(", -1)]
+    [InlineData(")))", -3)]
+    [InlineData(")())())", -3)]
+    public void Can_get_correct_floor_from_sequence(string sequence, int expectedFinalFloor)
     {
       var sut = new FloorEvaluator();
       
-      sut.ProcessInput("(");
+      sut.ProcessInput(sequence);
 
-      sut.GetFloor().Should().Be(1);
+      sut.GetFloor().Should().Be(expectedFinalFloor);
     }
   }
 }

@@ -17,7 +17,13 @@ namespace _01_NotQuiteLisp
 
     internal void ProcessInput(string input)
     {
-      _currentFloor = 1;
+      foreach (var ch in input)
+      {
+        if (ch == ')')
+          --_currentFloor;
+        else
+          ++_currentFloor;
+      }
     }
   }
 }
