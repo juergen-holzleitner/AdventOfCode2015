@@ -34,5 +34,28 @@ namespace _01_NotQuiteLisp
 
       sut.GetFloor().Should().Be(expectedFinalFloor);
     }
+
+    [Fact]
+    public void Initial_first_basement_position_is_zero()
+    {
+      var sut = new FloorEvaluator();
+
+      var firstBasementPosition = sut.GetFirstBasementPosition();
+
+      firstBasementPosition.Should().Be(0);
+    }
+
+    [Theory]
+    [InlineData(")", 1)]
+    [InlineData("()())", 5)]
+    public void Can_get_first_basement_position(string sequence, int expectedFirstBasementPosition)
+    {
+      var sut = new FloorEvaluator();
+
+      sut.ProcessInput(sequence);
+
+      var firstBasementPosition = sut.GetFirstBasementPosition();
+      firstBasementPosition.Should().Be(expectedFirstBasementPosition);
+    }
   }
 }
