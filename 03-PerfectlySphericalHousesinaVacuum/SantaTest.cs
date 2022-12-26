@@ -36,7 +36,7 @@ namespace _03_PerfectlySphericalHousesinaVacuum
     [Fact]
     public void Santa_has_initially_one_position()
     {
-      var sut = new Santa();
+      var sut = new Santa(1);
 
       var numHouses = sut.GetNumberOfVisitedHouses();
 
@@ -51,6 +51,16 @@ namespace _03_PerfectlySphericalHousesinaVacuum
     public void Can_count_visited_positions(string input, int expectedHouses)
     {
       var numHouses = Santa.GetNumVisitedHouses(input);
+      numHouses.Should().Be(expectedHouses);
+    }
+
+    [Theory]
+    [InlineData("^v", 3)]
+    [InlineData("^>v<", 3)]
+    [InlineData("^v^v^v^v^v ", 11)]
+    public void Can_work_with_two_santas(string input, int expectedHouses)
+    {
+      var numHouses = Santa.GetNumVisitedHousesWithTowSantas(input);
       numHouses.Should().Be(expectedHouses);
     }
   }

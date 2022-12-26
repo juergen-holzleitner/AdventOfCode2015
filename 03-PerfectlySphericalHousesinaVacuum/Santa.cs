@@ -6,30 +6,28 @@
   {
     internal Pos Move(Direction direction)
     {
-      switch (direction)
+      return direction switch
       {
-        case Direction.Left:
-          return new Pos(X - 1, Y);
-        case Direction.Right:
-          return new Pos(X + 1, Y);
-        case Direction.Up:
-          return new Pos(X, Y - 1);
-        case Direction.Down:
-          return new Pos(X, Y + 1);
-        default:
-          throw new ApplicationException();
-      }
+        Direction.Left => new Pos(X - 1, Y),
+        Direction.Right => new Pos(X + 1, Y),
+        Direction.Up => new Pos(X, Y - 1),
+        Direction.Down => new Pos(X, Y + 1),
+        _ => throw new ApplicationException(),
+      };
     }
   }
 
   internal class Santa
   {
-    private Pos pos;
+    private readonly Pos[] pos;
     private readonly HashSet<Pos> visitedPositions = new();
+    private int currentSanta;
 
-    public Santa()
+    public Santa(int numSantas)
     {
-      visitedPositions.Add(pos);
+      pos = new Pos[numSantas];
+      currentSanta = 0;
+      visitedPositions.Add(pos[currentSanta]);
     }
 
     internal static Direction ParseDirection(char dir)
@@ -63,14 +61,24 @@
     {
       foreach (var direction in ParseInput(input))
       {
-        pos = pos.Move(direction);
-        visitedPositions.Add(pos);
+        pos[currentSanta] = pos[currentSanta].Move(direction);
+        visitedPositions.Add(pos[currentSanta]);
+        ++currentSanta;
+        if (currentSanta >= pos.Length)
+          currentSanta = 0;
       }
     }
 
     internal static int GetNumVisitedHouses(string input)
     {
-      var santa = new Santa();
+      var santa = new Santa(1);
+      santa.MoveInput(input);
+      return santa.GetNumberOfVisitedHouses();
+    }
+
+    internal static int GetNumVisitedHousesWithTowSantas(string input)
+    {
+      var santa = new Santa(2);
       santa.MoveInput(input);
       return santa.GetNumberOfVisitedHouses();
     }
