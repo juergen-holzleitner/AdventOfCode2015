@@ -10,13 +10,23 @@ namespace _06_ProbablyaFireHazard
   {
     internal static int GetLightsOn(string text)
     {
+      return CalculateLights(text, false);
+    }
+
+    private static int CalculateLights(string text, bool isPartTwo)
+    {
       var instructions = ParseInstructions(text);
       var board = new Board();
       foreach (var instr in instructions)
       {
-        board.Perform(instr);
+        board.Perform(instr, isPartTwo);
       }
       return board.GetNumLightsOn();
+    }
+
+    internal static int GetTotalBrightness(string text)
+    {
+      return CalculateLights(text, true);
     }
 
     internal static IEnumerable<Instruction> ParseInstructions(string text)

@@ -62,7 +62,7 @@ namespace _06_ProbablyaFireHazard
     {
       var board = new Board();
 
-      board.Perform(new Instruction(Action.On, new Pos(0, 0), new Pos(0, 0)));
+      board.Perform(new Instruction(Action.On, new Pos(0, 0), new Pos(0, 0)), false);
 
       var numLightsOn = board.GetNumLightsOn();
       numLightsOn.Should().Be(1);
@@ -74,6 +74,14 @@ namespace _06_ProbablyaFireHazard
       var text = "turn on 0,0 through 999,999\r\ntoggle 0,0 through 999,0\r\nturn off 499,499 through 500,500\r\n";
       var numLightsOn = Light.GetLightsOn(text);
       numLightsOn.Should().Be(998996);
+    }
+
+    [Fact]
+    public void Can_get_total_brightness()
+    {
+      var text = "turn on 0,0 through 0,0\r\ntoggle 0,0 through 999,999";
+      var totalBrightness = Light.GetTotalBrightness(text);
+      totalBrightness.Should().Be(2000001);
     }
   }
 }
