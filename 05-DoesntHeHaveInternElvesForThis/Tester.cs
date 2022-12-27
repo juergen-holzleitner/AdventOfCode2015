@@ -14,6 +14,24 @@
       return numNice;
     }
 
+    internal static bool HasDoubleRepeating(string input)
+    {
+      for (int n = 1; n < input.Length; ++n)
+      {
+        if (HasCharacterRepeating(input, input[n - 1], input[n], n + 1))
+          return true;
+      }
+      return false;
+    }
+
+    private static bool HasCharacterRepeating(string input, char ch1, char ch2, int startPos)
+    {
+      for (int n = startPos + 1; n < input.Length; ++n)
+        if (input[n - 1] == ch1 && input[n] == ch2)
+          return true;
+      return false;
+    }
+
     internal static bool HasForbiddenString(string testString)
     {
       var forbiddenStrings = new[] { "ab", "cd", "pq", "xy" };
@@ -76,6 +94,31 @@
         'u' => true,
         _ => false
       };
+    }
+
+    internal static bool HasRepeatingWithBetween(string input)
+    {
+      for (int n = 2; n < input.Length; ++n)
+        if (input[n - 2] == input[n])
+          return true;
+      return false;
+    }
+
+    internal static bool IsNicePart2(string input)
+    {
+      return HasDoubleRepeating(input) && HasRepeatingWithBetween(input);
+    }
+
+    internal static int GetNumNiceWordsPart2(string input)
+    {
+      int numNice = 0;
+      foreach (var word in input.Split('\n'))
+      {
+        if (!string.IsNullOrWhiteSpace(word))
+          if (IsNicePart2(word))
+            ++numNice;
+      }
+      return numNice;
     }
   }
 }

@@ -57,5 +57,44 @@ namespace _05_DoesntHeHaveInternElvesForThis
       var numWords = Tester.GetNumNiceWords(input);
       numWords.Should().Be(2);
     }
+
+    [Theory]
+    [InlineData("xyxy", true)]
+    [InlineData("aa", false)]
+    [InlineData("aabcdefgaa", true)]
+    public void Can_check_repeating_double(string input, bool expectedResult)
+    {
+      var hasDoubleReating = Tester.HasDoubleRepeating(input);
+      hasDoubleReating.Should().Be(expectedResult);
+    }
+
+    [Theory]
+    [InlineData("xyx", true)]
+    [InlineData("abcdefeghi", true)]
+    [InlineData("aaa", true)]
+    public void Can_check_repeating_with_between(string input, bool expectedResult)
+    {
+      var hasRepeatingWithBetween = Tester.HasRepeatingWithBetween(input);
+      hasRepeatingWithBetween.Should().Be(expectedResult);
+    }
+
+    [Theory]
+    [InlineData("qjhvhtzxzqqjkmpb", true)]
+    [InlineData("xxyxx", true)]
+    [InlineData("uurcxstgmygtbstg", false)]
+    [InlineData("ieodomkazucvgmuy", false)]
+    public void Can_check_is_nice_part2(string input, bool expectedResult)
+    {
+      var isNice = Tester.IsNicePart2(input);
+      isNice.Should().Be(expectedResult);
+    }
+
+    [Fact]
+    public void Can_check_num_nice_words_part2()
+    {
+      var input = "qjhvhtzxzqqjkmpb\r\nxxyxx\r\nuurcxstgmygtbstg\r\nieodomkazucvgmuy\r\n";
+      var numWords = Tester.GetNumNiceWordsPart2(input);
+      numWords.Should().Be(2);
+    }
   }
 }
