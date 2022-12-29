@@ -1,5 +1,4 @@
-﻿using System.Dynamic;
-using System.Text.RegularExpressions;
+﻿using System.Text.RegularExpressions;
 
 namespace _07_SomeAssemblyRequired
 {
@@ -184,6 +183,30 @@ namespace _07_SomeAssemblyRequired
       var wire = new Wire(text);
       var wireValue = wire.GetWireValue(wireName);
       return wireValue;
+    }
+
+    internal void ResetWireWithNumber(string wire, ushort number)
+    {
+      if (!wires.ContainsKey(wire))
+        throw new ApplicationException();
+
+      wires.Remove(wire);
+
+      foreach (var key in wires.Keys)
+      {
+        wires[key].Value = null;
+      }
+
+      wires.Add(wire, new CachedOperand(new FactorOperand(new NumberFactor(number))));
+    }
+
+    internal static ushort GetFinalWireValueWithRestart(string text, string wireValue, string restartWire)
+    {
+      var wire = new Wire(text);
+      var value = wire.GetWireValue(wireValue);
+      wire.ResetWireWithNumber(restartWire, value);
+      value = wire.GetWireValue(wireValue);
+      return value;
     }
   }
 }

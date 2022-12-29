@@ -1,6 +1,4 @@
 using FluentAssertions;
-using FluentAssertions.Equivalency.Tracing;
-using System.Runtime.CompilerServices;
 
 namespace _07_SomeAssemblyRequired
 {
@@ -48,7 +46,7 @@ namespace _07_SomeAssemblyRequired
     public void Can_parse_binary_instruction(string text, Operation expectedOperation)
     {
       var binaryOperand = Wire.ParseInstruction(text).Operand as BinaryOperand;
-     
+
       binaryOperand.Should().NotBeNull();
       binaryOperand!.LeftFactor.Should().Be(new VariableFactor("x"));
       binaryOperand!.RightFactor.Should().Be(new NumberFactor(111));
@@ -69,7 +67,7 @@ namespace _07_SomeAssemblyRequired
       var sut = new Wire(string.Empty);
 
       var act = () => sut.GetWireValue("a");
-      
+
       act.Should().Throw<ApplicationException>();
     }
 
@@ -81,7 +79,7 @@ namespace _07_SomeAssemblyRequired
       var sut = new Wire(text);
 
       var wireValue = sut.GetWireValue(wire);
-      
+
       wireValue.Should().Be(expectedValue);
     }
 
@@ -129,6 +127,36 @@ namespace _07_SomeAssemblyRequired
       var text = "123 -> x\r\n456 -> y\r\nx AND y -> d\r\nx OR y -> e\r\nx LSHIFT 2 -> f\r\ny RSHIFT 2 -> g\r\nNOT x -> h\r\nNOT y -> i";
       var wireValue = Wire.GetFinalWireValue(text, wire);
       wireValue.Should().Be(expectedValue);
+    }
+
+    [Fact]
+    public void Can_calculate_part2_by_steps()
+    {
+      var text = """
+c OR b -> a
+c AND d -> b
+15 -> c
+1 -> d
+""";
+      var wire = new Wire(text);
+      var valueA = wire.GetWireValue("a");
+      wire.ResetWireWithNumber("b", valueA);
+      valueA = wire.GetWireValue("a");
+      valueA.Should().Be(15);
+    }
+
+    [Fact]
+    public void Can_calculate_part2()
+    {
+      var text = """
+c OR b -> a
+c AND d -> b
+15 -> c
+1 -> d
+""";
+
+      var wireValue = Wire.GetFinalWireValueWithRestart(text, "a", "b");
+      wireValue.Should().Be(15);
     }
   }
 }
