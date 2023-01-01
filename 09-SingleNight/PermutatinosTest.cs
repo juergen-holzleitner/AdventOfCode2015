@@ -25,7 +25,7 @@ namespace _09_SingleNight
         }
     }
 
-    private int GetFactorial(int number)
+    private static int GetFactorial(int number)
     {
       int factorial = 1;
       for (int n = 2; n <= number; ++n)
@@ -42,6 +42,48 @@ namespace _09_SingleNight
       var numElements = Permutation.GetAllOf(number).Count();
 
       numElements.Should().Be(expectedElements);
+    }
+
+    [Fact]
+    public void Can_parse_line()
+    {
+      var text = "London to Dublin = 464\r\n";
+      var route = Permutation.ParseLine(text);
+
+      route.Route.Start.Should().Be("London");
+      route.Route.End.Should().Be("Dublin");
+      route.Distance.Should().Be(464);
+    }
+
+    [Fact]
+    public void Can_parse_intput()
+    {
+      var text = "London to Dublin = 464\r\nLondon to Belfast = 518\r\nDublin to Belfast = 141";
+
+      var input = Permutation.ParseInput(text);
+
+      input.Cities.Should().BeEquivalentTo(new[] {"London", "Dublin", "Belfast"});
+      input.Distances.Should().HaveCount(6);
+    }
+
+    [Fact]
+    public void Can_get_distance()
+    {
+      var text = "London to Dublin = 464\r\nLondon to Belfast = 518\r\nDublin to Belfast = 141";
+      var input = Permutation.ParseInput(text);
+
+      var distance = Permutation.GetRouteDistance(input, new List<int> { 0, 1, 2});
+
+      distance.Should().Be(605);
+    }
+
+    [Fact]
+    public void Can_get_shortest_distance()
+    {
+      var text = "London to Dublin = 464\r\nLondon to Belfast = 518\r\nDublin to Belfast = 141";
+      var distance = Permutation.GetShortestDistance(text);
+      
+      distance.Should().Be(605);
     }
   }
 }
