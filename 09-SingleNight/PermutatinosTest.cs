@@ -85,5 +85,14 @@ namespace _09_SingleNight
       
       distance.Should().Be(605);
     }
+
+    [Fact]
+    public void Can_get_longest_distance()
+    {
+      var text = "London to Dublin = 464\r\nLondon to Belfast = 518\r\nDublin to Belfast = 141";
+      var distance = Permutation.GetLongestDistance(text);
+
+      distance.Should().Be(982);
+    }
   }
 }

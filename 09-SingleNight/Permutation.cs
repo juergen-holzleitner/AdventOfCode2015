@@ -101,5 +101,14 @@ namespace _09_SingleNight
       var minDistance = permutations.Select(p => GetRouteDistance(input, p)).Min();
       return minDistance;
     }
+
+    internal static int GetLongestDistance(string text)
+    {
+      var input = ParseInput(text);
+      var permutations = GetAllOf(input.Cities.Count);
+
+      var minDistance = permutations.Select(p => GetRouteDistance(input, p)).Max();
+      return minDistance;
+    }
   }
 }
