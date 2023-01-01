@@ -65,5 +65,25 @@ namespace _08_Matchsticks
       var diff = LengthCalculator.GetDiff(text);
       diff.Should().Be(12);
     }
+
+    [Theory]
+    [InlineData("", 0, 2)]
+    [InlineData("\\", 1, 4)]
+    [InlineData("\\\"", 2, 6)]
+    public void Can_get_length_of_encoded_string(string str, int expectedCodeLength, int expectedNumber)
+    {
+      var length = LengthCalculator.GetEncodedLength(str);
+      length.Code.Should().Be(expectedCodeLength);
+      length.Number.Should().Be(expectedNumber);
+    }
+
+    [Fact]
+    public void Can_calculate_result_part2()
+    {
+      var text = "\"\"\r\n\"abc\"\r\n\"aaa\\\"aaa\"\r\n\"\\x27\"\r\n\r\n";
+      var diff = LengthCalculator.GetEncodedDiff(text);
+      diff.Should().Be(19);
+    }
+
   }
 }

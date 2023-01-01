@@ -20,6 +20,36 @@ namespace _08_Matchsticks
       return total.Code - total.Number;
     }
 
+    internal static int GetEncodedDiff(string text)
+    {
+      var total = new Length(0, 0);
+      foreach (var str in text.Split('\n'))
+      {
+        if (!string.IsNullOrWhiteSpace(str))
+        {
+          var l = GetEncodedLength(str);
+          total = total with { Code = total.Code + l.Code, Number = total.Number + l.Number };
+        }
+      }
+
+      return total.Number - total.Code;
+    }
+
+    internal static Length GetEncodedLength(string str)
+    {
+      var strInitial = str.Trim();
+
+      var strEscaped = strInitial;
+
+      strEscaped = strEscaped.Replace("\"", "..");
+      strEscaped = strEscaped.Replace("\\", "..");
+
+      int codeLength = strInitial.Length;
+      int numberLength = strEscaped.Length + 2;
+
+      return new Length(codeLength, numberLength);
+    }
+
     internal static Length GetLength(string str)
     {
       var strInitial = str.Trim();
@@ -44,7 +74,6 @@ namespace _08_Matchsticks
 
 
       int codeLength = strInitial.Length;
-
       int numberLength = strEscaped.Length;
       
       return new Length(codeLength, numberLength);
