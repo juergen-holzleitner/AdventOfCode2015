@@ -8,22 +8,45 @@ namespace _12_JSAbacusFramework
     {
       var numbers = new List<int>();
 
-      var regex = RegexNumber();
-      var matches = regex.Matches(str);
-      foreach (Match match in matches.Cast<Match>())
+      int n = 0;
+      while (n < str.Length)
       {
-        numbers.Add(int.Parse(match.Value));
+        if (char.IsDigit(str[n]))
+        {
+          var number = ParseNumber(str, ref n);
+          numbers.Add(number);
+        }
+        else if (str[n] == '-')
+        {
+          ++n;
+          var number = ParseNumber(str, ref n);
+          numbers.Add(-number);
+        }
+        else
+        {
+          ++n;
+        }
       }
 
       return numbers;
+    }
+
+    private static int ParseNumber(string str, ref int n)
+    {
+      int number = 0;
+      while (n < str.Length && char.IsDigit(str[n]))
+      {
+        number *= 10;
+        number += str[n] - '0';
+        ++n;
+      }
+
+      return number;
     }
 
     internal static int GetSumOfAllNumbers(string str)
     {
       return GetAllNumbers(str).Sum();
     }
-
-    [GeneratedRegex("-?\\d+")]
-    private static partial Regex RegexNumber();
   }
 }
