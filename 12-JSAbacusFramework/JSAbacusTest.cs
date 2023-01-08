@@ -9,7 +9,7 @@ namespace _12_JSAbacusFramework
     {
       var str = "[1,2,3]";
       var numbers = JSAbacus.GetAllNumbers(str, false);
-      numbers.Should().BeEquivalentTo(new[] { 1, 2,3 });
+      numbers.Should().BeEquivalentTo(new[] { 1, 2, 3 });
     }
 
     [Theory]

@@ -35,7 +35,7 @@ namespace _11_CorporatePolicy
       int numPairs = 0;
       for (int n = 1; n < pwd.Length; ++n)
       {
-        if (pwd[n] == pwd[n - 1]) 
+        if (pwd[n] == pwd[n - 1])
         {
           ++numPairs;
           ++n;

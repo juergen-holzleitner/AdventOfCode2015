@@ -62,7 +62,7 @@ namespace _09_SingleNight
 
       var input = Permutation.ParseInput(text);
 
-      input.Cities.Should().BeEquivalentTo(new[] {"London", "Dublin", "Belfast"});
+      input.Cities.Should().BeEquivalentTo(new[] { "London", "Dublin", "Belfast" });
       input.Distances.Should().HaveCount(6);
     }
 
@@ -72,7 +72,7 @@ namespace _09_SingleNight
       var text = "London to Dublin = 464\r\nLondon to Belfast = 518\r\nDublin to Belfast = 141";
       var input = Permutation.ParseInput(text);
 
-      var distance = Permutation.GetRouteDistance(input, new List<int> { 0, 1, 2});
+      var distance = Permutation.GetRouteDistance(input, new List<int> { 0, 1, 2 });
 
       distance.Should().Be(605);
     }
@@ -82,7 +82,7 @@ namespace _09_SingleNight
     {
       var text = "London to Dublin = 464\r\nLondon to Belfast = 518\r\nDublin to Belfast = 141";
       var distance = Permutation.GetShortestDistance(text);
-      
+
       distance.Should().Be(605);
     }
 

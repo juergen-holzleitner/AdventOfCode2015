@@ -1,6 +1,4 @@
-﻿using System.Text.RegularExpressions;
-
-namespace _12_JSAbacusFramework
+﻿namespace _12_JSAbacusFramework
 {
   internal partial class JSAbacus
   {

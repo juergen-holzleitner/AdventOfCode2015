@@ -29,7 +29,7 @@ namespace _01_NotQuiteLisp
     public void Can_get_correct_floor_from_sequence(string sequence, int expectedFinalFloor)
     {
       var sut = new FloorEvaluator();
-      
+
       sut.ProcessInput(sequence);
 
       sut.GetFloor().Should().Be(expectedFinalFloor);

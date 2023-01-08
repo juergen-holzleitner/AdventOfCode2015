@@ -19,7 +19,7 @@ namespace _03_PerfectlySphericalHousesinaVacuum
     public void Should_throw_on_invalid_direction()
     {
       var invalidDirection = '\r';
-      
+
       var act = () => Santa.ParseDirection(invalidDirection);
 
       act.Should().Throw<ApplicationException>();

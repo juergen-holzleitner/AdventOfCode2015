@@ -25,7 +25,7 @@ namespace _08_Matchsticks
       var str = "abc\"";
 
       var act = () => LengthCalculator.GetLength(str);
-      
+
       act.Should().Throw<ArgumentException>();
     }
 

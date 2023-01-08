@@ -1,13 +1,8 @@
 ﻿using FluentAssertions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace _02_NoMath
 {
-    public class ParserTest
+  public class ParserTest
   {
     [Fact]
     public void Can_parse_single_line()

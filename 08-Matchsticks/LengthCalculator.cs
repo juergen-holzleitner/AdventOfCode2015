@@ -75,7 +75,7 @@ namespace _08_Matchsticks
 
       int codeLength = strInitial.Length;
       int numberLength = strEscaped.Length;
-      
+
       return new Length(codeLength, numberLength);
     }
   }

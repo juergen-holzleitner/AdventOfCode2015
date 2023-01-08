@@ -23,7 +23,7 @@ namespace _10_ElvesLookElvesSay
       const int n = 5;
 
       var result = Converter.GetAfter(input, n);
-      
+
       result.Should().Be("312211");
     }
 

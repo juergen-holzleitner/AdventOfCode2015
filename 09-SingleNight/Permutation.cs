@@ -1,6 +1,4 @@
-﻿using System.Configuration;
-using System.Security.Cryptography;
-using System.Text.RegularExpressions;
+﻿using System.Text.RegularExpressions;
 
 namespace _09_SingleNight
 {
