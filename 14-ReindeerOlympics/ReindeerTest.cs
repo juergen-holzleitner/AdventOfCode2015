@@ -11,6 +11,7 @@ namespace _14_ReindeerOlympics
 
       var reindeer = ReindeerProcessor.ParseLine(line);
 
+      reindeer.Name.Should().Be("Comet");
       reindeer.Speed.Should().Be(14);
       reindeer.Time.Should().Be(10);
       reindeer.Rest.Should().Be(127);
@@ -33,7 +34,7 @@ namespace _14_ReindeerOlympics
     [InlineData(1000, 1120)]
     public void Can_get_distance_after(int time, long expectedDistance)
     {
-      var reindeer = new Reindeer(14, 10, 127);
+      var reindeer = new Reindeer("Comet", 14, 10, 127);
 
       var distance = reindeer.GetDistanceAfter(time);
 
@@ -41,11 +42,19 @@ namespace _14_ReindeerOlympics
     }
 
     [Fact]
-    public void Can_solve_sample_one()
+    public void Can_solve_sample_part1()
     {
       var text = "Comet can fly 14 km/s for 10 seconds, but then must rest for 127 seconds.\r\nDancer can fly 16 km/s for 11 seconds, but then must rest for 162 seconds.\r\n";
       var maxDistance = ReindeerProcessor.GetMaxDistance(text, 1000);
       maxDistance.Should().Be(1120);
+    }
+
+    [Fact]
+    public void Can_solve_sample_part2()
+    {
+      var text = "Comet can fly 14 km/s for 10 seconds, but then must rest for 127 seconds.\r\nDancer can fly 16 km/s for 11 seconds, but then must rest for 162 seconds.\r\n";
+      var maxPoints = ReindeerProcessor.GetMaxPoints(text, 1000);
+      maxPoints.Should().Be(689);
     }
   }
 }
