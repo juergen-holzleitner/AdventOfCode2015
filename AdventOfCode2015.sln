@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "12-JSAbacusFramework", "12-
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "13-KnightsoftheDinnerTable", "13-KnightsoftheDinnerTable\13-KnightsoftheDinnerTable.csproj", "{E5B8ED3E-2837-49E1-9A26-28300DD49D62}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "14-ReindeerOlympics", "14-ReindeerOlympics\14-ReindeerOlympics.csproj", "{1188B8FA-137A-4EA2-BC3B-87C1BB1EA9F5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,10 @@ Global
 		{E5B8ED3E-2837-49E1-9A26-28300DD49D62}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E5B8ED3E-2837-49E1-9A26-28300DD49D62}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E5B8ED3E-2837-49E1-9A26-28300DD49D62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1188B8FA-137A-4EA2-BC3B-87C1BB1EA9F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1188B8FA-137A-4EA2-BC3B-87C1BB1EA9F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1188B8FA-137A-4EA2-BC3B-87C1BB1EA9F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1188B8FA-137A-4EA2-BC3B-87C1BB1EA9F5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
