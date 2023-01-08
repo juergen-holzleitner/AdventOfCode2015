@@ -1,5 +1,4 @@
-﻿using System.Security.Cryptography;
-using System.Text.RegularExpressions;
+﻿using System.Text.RegularExpressions;
 
 namespace _13_KnightsoftheDinnerTable
 {
@@ -18,7 +17,7 @@ namespace _13_KnightsoftheDinnerTable
       return GetPermutations(initial, 0);
     }
 
-    internal static Input ParseInput(string text)
+    internal static Input ParseInput(string text, bool includeMyself)
     {
       var table = new Dictionary<Position, int>();
 
@@ -28,6 +27,17 @@ namespace _13_KnightsoftheDinnerTable
           var input = ParseLine(line);
           table.Add(input.Position, input.Happiness);
         }
+
+      if (includeMyself)
+      {
+        var persons = GetPersons(new Input(table));
+
+        foreach (var person in persons)
+        {
+          table.Add(new Position(string.Empty, person), 0);
+          table.Add(new Position(person, string.Empty), 0);
+        }
+      }
 
       return new Input(table);
     }
@@ -82,9 +92,9 @@ namespace _13_KnightsoftheDinnerTable
     {
       return input.Table.Keys.Select(k => k.Person).Distinct().ToList();
     }
-    internal static int GetMaxHappiness(string text)
+    internal static int GetMaxHappiness(string text, bool includeMyself)
     {
-      var input = ParseInput(text);
+      var input = ParseInput(text, includeMyself);
       var persons = GetPersons(input);
 
       var enumeration = GetAllPermutationsOf(persons.Count - 1);
