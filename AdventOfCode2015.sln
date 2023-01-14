@@ -31,7 +31,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "13-KnightsoftheDinnerTable"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "14-ReindeerOlympics", "14-ReindeerOlympics\14-ReindeerOlympics.csproj", "{1188B8FA-137A-4EA2-BC3B-87C1BB1EA9F5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "15-ScienceforHungryPeople", "15-ScienceforHungryPeople\15-ScienceforHungryPeople.csproj", "{D796155B-E2A4-48C7-8C9E-8F14B2E7B1AC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "15-ScienceforHungryPeople", "15-ScienceforHungryPeople\15-ScienceforHungryPeople.csproj", "{D796155B-E2A4-48C7-8C9E-8F14B2E7B1AC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "16-AuntSue", "16-AuntSue\16-AuntSue.csproj", "{DE080434-4A79-49C8-80C3-FC4C043A74D9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -99,6 +101,10 @@ Global
 		{D796155B-E2A4-48C7-8C9E-8F14B2E7B1AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D796155B-E2A4-48C7-8C9E-8F14B2E7B1AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D796155B-E2A4-48C7-8C9E-8F14B2E7B1AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE080434-4A79-49C8-80C3-FC4C043A74D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE080434-4A79-49C8-80C3-FC4C043A74D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE080434-4A79-49C8-80C3-FC4C043A74D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE080434-4A79-49C8-80C3-FC4C043A74D9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
