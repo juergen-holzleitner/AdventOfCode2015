@@ -67,5 +67,13 @@ namespace _15_ScienceforHungryPeople
       var score = IngredientThing.GetBestScore(text);
       score.Should().Be(62842880);
     }
+
+    [Fact]
+    public void Can_get_best_score_part2()
+    {
+      var text = "Butterscotch: capacity -1, durability -2, flavor 6, texture 3, calories 8\r\nCinnamon: capacity 2, durability 3, flavor -2, texture -1, calories 3\r\n";
+      var score = IngredientThing.GetBestScorePart2(text);
+      score.Should().Be(57600000);
+    }
   }
 }

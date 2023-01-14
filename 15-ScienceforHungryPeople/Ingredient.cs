@@ -22,7 +22,7 @@ namespace _15_ScienceforHungryPeople
       int score = 0;
       for (int n = 0; n < spoons.Length; ++n)
         score += ingredients[n].Capacity * spoons[n];
-      
+
       if (score > 0)
         return score;
       return 0;
@@ -55,6 +55,17 @@ namespace _15_ScienceforHungryPeople
       int score = 0;
       for (int n = 0; n < spoons.Length; ++n)
         score += ingredients[n].Texture * spoons[n];
+
+      if (score > 0)
+        return score;
+      return 0;
+    }
+
+    private static long GetScoreCalories(List<Ingredient> ingredients, int[] spoons)
+    {
+      int score = 0;
+      for (int n = 0; n < spoons.Length; ++n)
+        score += ingredients[n].Calories * spoons[n];
 
       if (score > 0)
         return score;
@@ -122,6 +133,12 @@ namespace _15_ScienceforHungryPeople
     {
       var ingredients = ParseInput(text);
       return GetAllPermutations(100, ingredients.Count).Select(p => CalculateScore(ingredients, p)).Max();
+    }
+
+    internal static long GetBestScorePart2(string text)
+    {
+      var ingredients = ParseInput(text);
+      return GetAllPermutations(100, ingredients.Count).Where(p => GetScoreCalories(ingredients, p) == 500).Select(p => CalculateScore(ingredients, p)).Max();
     }
   }
 }
