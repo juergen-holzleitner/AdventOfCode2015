@@ -47,28 +47,38 @@ namespace _16_AuntSue
       return (thing, count);
     }
 
-    internal static int GetAuntId(string input)
+    internal static int GetAuntId(string input, bool part2)
     {
-      var matchingAunts = GetMatchingAunts(GetTicketTape(), input);
+      var matchingAunts = GetMatchingAunts(GetTicketTape(), input, part2);
       return matchingAunts.Single().Id;
     }
 
-    private static IEnumerable<Aunt> GetMatchingAunts(TicketTape ticketTape, string input)
+    private static IEnumerable<Aunt> GetMatchingAunts(TicketTape ticketTape, string input, bool part2)
     {
       foreach (var line in input.Split('\n'))
         if (!string.IsNullOrWhiteSpace(line))
         {
           var aunt = ParseAunt(line);
-          if (IsAuntMatching(aunt, ticketTape))
+          if (IsAuntMatching(aunt, ticketTape, part2))
             yield return aunt;
         }
     }
 
-    private static bool IsAuntMatching(Aunt aunt, TicketTape ticketTape)
+    private static bool IsAuntMatching(Aunt aunt, TicketTape ticketTape, bool part2)
     {
       foreach (var thing in aunt.Things.Things)
       {
-        if (ticketTape.Things[thing.Key] != thing.Value)
+        if (part2 && (thing.Key == "cats" || thing.Key == "trees"))
+        {
+          if (ticketTape.Things[thing.Key] >= thing.Value)
+            return false;
+        }
+        else if (part2 && (thing.Key == "pomeranians" || thing.Key == "goldfish"))
+        {
+          if (ticketTape.Things[thing.Key] <= thing.Value)
+            return false;
+        }
+        else if (ticketTape.Things[thing.Key] != thing.Value)
           return false;
       }
       return true;
