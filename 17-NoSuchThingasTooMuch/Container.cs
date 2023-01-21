@@ -53,5 +53,14 @@
       var permutations = GetAllThatFit(containers, expectedValue);
       return permutations.Count();
     }
+
+    internal static int GetCountOfMin(string input, int expectedValue)
+    {
+      var containers = Parse(input);
+      var permutations = GetAllThatFit(containers, expectedValue);
+
+      var items = from p in permutations group p by p.Count into groups orderby groups.Key select new { Key = groups.Key, Num = groups.Count() };
+      return items.First().Num;
+    }
   }
 }

@@ -31,5 +31,14 @@ namespace _17_NoSuchThingasTooMuch
 
       num.Should().Be(4);
     }
+
+    [Fact]
+    public void Can_get_count_of_min()
+    {
+      string input = "20\r\n15\r\n10\r\n5\r\n5";
+      var num = Container.GetCountOfMin(input, 25);
+
+      num.Should().Be(3);
+    }
   }
 }
