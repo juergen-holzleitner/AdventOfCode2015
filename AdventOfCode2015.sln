@@ -33,9 +33,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "14-ReindeerOlympics", "14-R
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "15-ScienceforHungryPeople", "15-ScienceforHungryPeople\15-ScienceforHungryPeople.csproj", "{D796155B-E2A4-48C7-8C9E-8F14B2E7B1AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "16-AuntSue", "16-AuntSue\16-AuntSue.csproj", "{DE080434-4A79-49C8-80C3-FC4C043A74D9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "16-AuntSue", "16-AuntSue\16-AuntSue.csproj", "{DE080434-4A79-49C8-80C3-FC4C043A74D9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "17-NoSuchThingasTooMuch", "17-NoSuchThingasTooMuch\17-NoSuchThingasTooMuch.csproj", "{F56AC940-D314-4286-9EE5-DEFCB942C8F9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "17-NoSuchThingasTooMuch", "17-NoSuchThingasTooMuch\17-NoSuchThingasTooMuch.csproj", "{F56AC940-D314-4286-9EE5-DEFCB942C8F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "18-GIF", "18-GIF\18-GIF.csproj", "{488079E4-A832-4822-A350-97F6D71DB8D8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -111,6 +113,10 @@ Global
 		{F56AC940-D314-4286-9EE5-DEFCB942C8F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F56AC940-D314-4286-9EE5-DEFCB942C8F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F56AC940-D314-4286-9EE5-DEFCB942C8F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{488079E4-A832-4822-A350-97F6D71DB8D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{488079E4-A832-4822-A350-97F6D71DB8D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{488079E4-A832-4822-A350-97F6D71DB8D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{488079E4-A832-4822-A350-97F6D71DB8D8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
