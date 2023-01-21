@@ -22,9 +22,23 @@
   internal class GIF
   {
     readonly Input input;
-    public GIF(string text)
+    readonly bool withCornerLights;
+    public GIF(string text, bool withCornerLights)
     {
       input = ParseInput(text);
+      this.withCornerLights = withCornerLights;
+      AddCornerLights();
+    }
+
+    private void AddCornerLights()
+    {
+      if (withCornerLights)
+      {
+        input.Positions.Add(new Pos(0, 0));
+        input.Positions.Add(new Pos(input.Dimension - 1, 0));
+        input.Positions.Add(new Pos(0, input.Dimension - 1));
+        input.Positions.Add(new Pos(input.Dimension - 1, input.Dimension - 1));
+      }
     }
 
     internal static Input ParseInput(string text)
@@ -67,6 +81,8 @@
         }
 
       input.Positions = newPositions;
+
+      AddCornerLights();
     }
 
     internal int GetNumNeighbours(Pos pos)
@@ -79,9 +95,9 @@
       return input.Positions.Count();
     }
 
-    internal static int GetActiveAfter(string text, int numSteps)
+    internal static int GetActiveAfter(string text, int numSteps, bool withCornerLights)
     {
-      var gif = new GIF(text);
+      var gif = new GIF(text, withCornerLights);
       for (int n = 0; n < numSteps; ++n)
         gif.ProcessGeneration();
 

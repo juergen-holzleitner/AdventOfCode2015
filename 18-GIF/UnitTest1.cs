@@ -35,7 +35,7 @@ namespace _18_GIF
     public void Can_count_neighbours()
     {
       var text = ".#.#.#\r\n...##.\r\n#....#\r\n..#...\r\n#.#..#\r\n####..\r\n";
-      var sut = new GIF(text);
+      var sut = new GIF(text, false);
 
       var num = sut.GetNumNeighbours(new Pos(2, 0));
 
@@ -46,7 +46,7 @@ namespace _18_GIF
     public void Can_get_num_active()
     {
       var text = ".#.#.#\r\n...##.\r\n#....#\r\n..#...\r\n#.#..#\r\n####..\r\n";
-      var sut = new GIF(text);
+      var sut = new GIF(text, false);
 
       var num = sut.GetNumActive();
 
@@ -54,10 +54,21 @@ namespace _18_GIF
     }
 
     [Fact]
+    public void Can_get_num_active_with_corner_lights()
+    {
+      var text = ".#.#.#\r\n...##.\r\n#....#\r\n..#...\r\n#.#..#\r\n####..\r\n";
+      var sut = new GIF(text, true);
+
+      var num = sut.GetNumActive();
+
+      num.Should().Be(17);
+    }
+
+    [Fact]
     public void Can_get_next_generation()
     {
       var text = ".#.#.#\r\n...##.\r\n#....#\r\n..#...\r\n#.#..#\r\n####..\r\n";
-      var sut = new GIF(text);
+      var sut = new GIF(text, false);
       sut.ProcessGeneration();
 
       var active = sut.GetNumActive();
@@ -69,8 +80,16 @@ namespace _18_GIF
     public void Can_get_num_after_4_steps()
     {
       var text = ".#.#.#\r\n...##.\r\n#....#\r\n..#...\r\n#.#..#\r\n####..\r\n";
-      int num = GIF.GetActiveAfter(text, 4);
+      int num = GIF.GetActiveAfter(text, 4, false);
       num.Should().Be(4);
+    }
+
+    [Fact]
+    public void Can_get_num_after_4_steps_with_corner_lights()
+    {
+      var text = ".#.#.#\r\n...##.\r\n#....#\r\n..#...\r\n#.#..#\r\n####..\r\n";
+      int num = GIF.GetActiveAfter(text, 5, true);
+      num.Should().Be(17);
     }
   }
 }
