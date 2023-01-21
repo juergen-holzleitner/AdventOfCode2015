@@ -39,6 +39,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "17-NoSuchThingasTooMuch", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "18-GIF", "18-GIF\18-GIF.csproj", "{488079E4-A832-4822-A350-97F6D71DB8D8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "19-Medicine", "19-Medicine\19-Medicine.csproj", "{E22950C5-91DA-48A1-A28B-0FF2B67A7B01}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -117,6 +119,10 @@ Global
 		{488079E4-A832-4822-A350-97F6D71DB8D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{488079E4-A832-4822-A350-97F6D71DB8D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{488079E4-A832-4822-A350-97F6D71DB8D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E22950C5-91DA-48A1-A28B-0FF2B67A7B01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E22950C5-91DA-48A1-A28B-0FF2B67A7B01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E22950C5-91DA-48A1-A28B-0FF2B67A7B01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E22950C5-91DA-48A1-A28B-0FF2B67A7B01}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
