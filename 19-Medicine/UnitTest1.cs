@@ -95,5 +95,13 @@ namespace _19_Medicine
       var num = Medicine.GetNumStepsUntilFound(text);
       num.Should().Be(6);
     }
+
+    [Fact]
+    public void Can_get_num_steps_via_production_rules()
+    {
+      var text = File.ReadAllText("input.txt");
+      var num = Medicine.CountWithProductionRules(text);
+      num.Should().Be(212);
+    }
   }
 }

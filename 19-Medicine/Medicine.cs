@@ -97,7 +97,26 @@ namespace _19_Medicine
       return new Input(replacements, starting);
     }
 
+    private static int CountViaProductionRules(string str)
+    {
+      Func<string, int> countStr = x =>
+      {
+        var count = 0;
+        for (var index = str.IndexOf(x); index >= 0; index = str.IndexOf(x, index + 1), ++count) { }
+        return count;
+      };
+
+      var num = str.Count(char.IsUpper) - countStr("Rn") - countStr("Ar") - 2 * countStr("Y") - 1;
+      return num;
+    }
+
     [GeneratedRegex("(?<from>\\w+) => (?<to>\\w+)")]
     private static partial Regex RegexReplacement();
+
+    internal static int CountWithProductionRules(string text)
+    {
+      var input = ParseInput(text);
+      return CountViaProductionRules(input.Starting);
+    }
   }
 }

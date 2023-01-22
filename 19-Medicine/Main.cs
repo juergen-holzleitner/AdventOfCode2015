@@ -4,5 +4,6 @@ var text = File.ReadAllText("input.txt");
 var num = Medicine.GetNumDistinctReplacements(text);
 Console.WriteLine("Part 1: " + num);
 
-num = Medicine.GetNumStepsUntilFound(text);
+// num = Medicine.GetNumStepsUntilFound(text);
+num = Medicine.CountWithProductionRules(text);
 Console.WriteLine("Part 2: " + num);
