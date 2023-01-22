@@ -21,18 +21,29 @@ namespace _19_Medicine
         sb.Remove(n, replacement.From.Length);
         sb.Insert(n, replacement.To);
         yield return sb.ToString();
-        
+
         ++n;
       }
     }
 
     internal static IEnumerable<string> GetAllReplacements(Input input)
     {
-      foreach (var replacement in input.Replacements)
-      {
-        foreach (var str in GetAllReplacements(input.Starting, replacement))
-          yield return str;
-      }
+      return GetNextMolecules(input.Starting, input.Replacements);
+    }
+
+    internal static IEnumerable<string> GetNextMolecules(string current, List<Replacement> replacements)
+    {
+      return GetNextMolecules(new[] { current }, replacements);
+    }
+
+    internal static IEnumerable<string> GetNextMolecules(IEnumerable<string> currentElements, List<Replacement> replacements)
+    {
+      foreach (var current in currentElements)
+        foreach (var replacement in replacements)
+        {
+          foreach (var str in GetAllReplacements(current, replacement))
+            yield return str;
+        }
     }
 
     internal static int GetNumDistinctReplacements(string text)
@@ -40,6 +51,21 @@ namespace _19_Medicine
       var input = ParseInput(text);
       var replacements = GetAllReplacements(input);
       return replacements.Distinct().Count();
+    }
+
+    internal static int GetNumStepsUntilFound(string text)
+    {
+      var input = ParseInput(text);
+      var n = 0;
+      IEnumerable<string> current = new[] { "e" };
+      for (; ; )
+      {
+        if (current.Contains(input.Starting))
+          return n;
+
+        ++n;
+        current = GetNextMolecules(current, input.Replacements).Where(e => e.Length <= input.Starting.Length).Distinct();
+      }
     }
 
     internal static Input ParseInput(string text)

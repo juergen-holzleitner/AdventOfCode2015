@@ -9,7 +9,7 @@ namespace _19_Medicine
     {
       var text = "H => HO\r\nH => OH\r\nO => HH\r\n\r\nHOH";
       var input = Medicine.ParseInput(text);
-      input.Replacements.Should().BeEquivalentTo(new[] 
+      input.Replacements.Should().BeEquivalentTo(new[]
       {
         new Replacement("H", "HO"),
         new Replacement("H", "OH"),
@@ -30,7 +30,7 @@ namespace _19_Medicine
     {
       var starting = "HOH";
       var results = Medicine.GetAllReplacements(starting, new Replacement("H", "HO"));
-      results.Should().BeEquivalentTo(new[] { "HOOH", "HOHO"});
+      results.Should().BeEquivalentTo(new[] { "HOOH", "HOHO" });
     }
 
     [Fact]
@@ -38,7 +38,7 @@ namespace _19_Medicine
     {
       var text = "H => HO\r\nH => OH\r\nO => HH\r\n\r\nHOH\r\n";
       var input = Medicine.ParseInput(text);
-      
+
       var results = Medicine.GetAllReplacements(input);
 
       results.Should().BeEquivalentTo(new[] { "HOOH", "HOHO", "OHOH", "HOOH", "HHHH" });
@@ -60,5 +60,40 @@ namespace _19_Medicine
       num.Should().Be(7);
     }
 
+    [Fact]
+    public void Can_get_next_molecules()
+    {
+      var text = "e => H\r\ne => O\r\nH => HO\r\nH => OH\r\nO => HH\r\n\r\nHOH";
+      var input = Medicine.ParseInput(text);
+
+      var nextMolecules = Medicine.GetNextMolecules("e", input.Replacements);
+      nextMolecules.Should().BeEquivalentTo(new[] { "H", "O" });
+    }
+
+    [Fact]
+    public void Can_get_next_molecules_of_set()
+    {
+      var text = "e => H\r\ne => O\r\nH => HO\r\nH => OH\r\nO => HH\r\n\r\nHOH";
+      var input = Medicine.ParseInput(text);
+
+      var nextMolecules = Medicine.GetNextMolecules(new[] { "e" }, input.Replacements);
+      nextMolecules.Should().BeEquivalentTo(new[] { "H", "O" });
+    }
+
+    [Fact]
+    public void Can_get_num_steps_until_found()
+    {
+      var text = "e => H\r\ne => O\r\nH => HO\r\nH => OH\r\nO => HH\r\n\r\nHOH";
+      var num = Medicine.GetNumStepsUntilFound(text);
+      num.Should().Be(3);
+    }
+
+    [Fact]
+    public void Can_get_num_steps_until_found_second_sample()
+    {
+      var text = "e => H\r\ne => O\r\nH => HO\r\nH => OH\r\nO => HH\r\n\r\nHOHOHO";
+      var num = Medicine.GetNumStepsUntilFound(text);
+      num.Should().Be(6);
+    }
   }
 }
