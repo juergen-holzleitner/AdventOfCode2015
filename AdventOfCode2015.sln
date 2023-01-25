@@ -37,9 +37,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "16-AuntSue", "16-AuntSue\16
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "17-NoSuchThingasTooMuch", "17-NoSuchThingasTooMuch\17-NoSuchThingasTooMuch.csproj", "{F56AC940-D314-4286-9EE5-DEFCB942C8F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "18-GIF", "18-GIF\18-GIF.csproj", "{488079E4-A832-4822-A350-97F6D71DB8D8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "18-GIF", "18-GIF\18-GIF.csproj", "{488079E4-A832-4822-A350-97F6D71DB8D8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "19-Medicine", "19-Medicine\19-Medicine.csproj", "{E22950C5-91DA-48A1-A28B-0FF2B67A7B01}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "19-Medicine", "19-Medicine\19-Medicine.csproj", "{E22950C5-91DA-48A1-A28B-0FF2B67A7B01}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "20-InfiniteElves", "20-InfiniteElves\20-InfiniteElves.csproj", "{44A2A243-6286-450E-AC67-0274C74D85E8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -123,6 +125,10 @@ Global
 		{E22950C5-91DA-48A1-A28B-0FF2B67A7B01}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E22950C5-91DA-48A1-A28B-0FF2B67A7B01}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E22950C5-91DA-48A1-A28B-0FF2B67A7B01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44A2A243-6286-450E-AC67-0274C74D85E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44A2A243-6286-450E-AC67-0274C74D85E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44A2A243-6286-450E-AC67-0274C74D85E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44A2A243-6286-450E-AC67-0274C74D85E8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
