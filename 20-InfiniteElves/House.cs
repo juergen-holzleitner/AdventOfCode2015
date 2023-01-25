@@ -7,14 +7,22 @@
       return int.Parse(text);
     }
 
-    internal static int GetFirstWithMoreThan(int num)
+    internal static int GetFirstWithMoreThan(int num, bool part2)
     {
-      var houses = new int[num / 10];
+      int factor = part2 ? 11 : 10;
+
+      int maxNumHouses = (num + factor - 1) / factor;
+      var houses = new int[maxNumHouses];
       for (int n = 0; n < houses.Length; ++n)
       {
-        for (int visit = n; visit < houses.Length; visit += (n + 1))
+        int elveNumber = n + 1;
+        var numVisits = houses.Length;
+        if (part2 && numVisits > 50 * elveNumber)
+          numVisits = 50 * elveNumber;
+        
+        for (int visit = n; visit < numVisits; visit += elveNumber)
         {
-          houses[visit] += (n + 1) * 10;
+          houses[visit] += elveNumber * factor;
         }
 
         if (houses[n] >= num)
@@ -24,10 +32,10 @@
       throw new ApplicationException();
     }
 
-    internal static int GetFirstWithMoreThan(string text)
+    internal static int GetFirstWithMoreThan(string text, bool isPart2)
     {
       var num = Parse(text);
-      return GetFirstWithMoreThan(num);
+      return GetFirstWithMoreThan(num, isPart2);
     }
   }
 }

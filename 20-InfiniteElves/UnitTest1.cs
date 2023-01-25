@@ -18,7 +18,7 @@ namespace _20_InfiniteElves
     [InlineData(150, 8)]
     public void Can_get_first_house(int num, int expectedHouse)
     {
-      var house = House.GetFirstWithMoreThan(num);
+      var house = House.GetFirstWithMoreThan(num, false);
       house.Should().Be(expectedHouse);
     }
 
@@ -26,8 +26,18 @@ namespace _20_InfiniteElves
     public void Can_get_first_house_from_input()
     {
       var text = "149";
-      var house = House.GetFirstWithMoreThan(text);
+      var house = House.GetFirstWithMoreThan(text, false);
       house.Should().Be(8);
+    }
+
+    [Theory]
+    [InlineData(77, 4)]
+    [InlineData(119, 6)]
+    [InlineData(165, 8)]
+    public void Can_get_first_house_part2(int num, int expectedHouse)
+    {
+      var house = House.GetFirstWithMoreThan(num, true);
+      house.Should().Be(expectedHouse);
     }
   }
 }
