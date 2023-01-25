@@ -111,6 +111,21 @@ namespace _21_RPG
       throw new ApplicationException();
     }
 
+    internal static int GetMaxCostsToLose(string text)
+    {
+      var boss = Parse(text);
+
+      var options = EnumerateAllOptions().OrderByDescending(o => o.Cost);
+      foreach (var option in options)
+      {
+        var player = new Person(100, option.Damage, option.Armor);
+        if (!IsPlayerWinning(player, boss))
+          return option.Cost;
+      }
+
+      throw new ApplicationException();
+    }
+
     internal static int GetPlayerDamage(Person player, Person boss)
     {
       return Math.Max(1, player.Damage - boss.Armor);

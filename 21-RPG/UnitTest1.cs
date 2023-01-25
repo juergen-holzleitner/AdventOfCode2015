@@ -123,5 +123,13 @@ namespace _21_RPG
       var costs = RPG.GetMinCostsToWin(text);
       costs.Should().Be(78);
     }
+
+    [Fact]
+    public void Can_get_max_costs_to_lose()
+    {
+      var text = "Hit Points: 104\r\nDamage: 8\r\nArmor: 1\r\n";
+      var costs = RPG.GetMaxCostsToLose(text);
+      costs.Should().Be(148);
+    }
   }
 }
