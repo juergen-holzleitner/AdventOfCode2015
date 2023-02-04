@@ -153,7 +153,7 @@ namespace _21_RPG
       var regex = RegExPerson();
       var match = regex.Match(text);
       if (!match.Success)
-        throw new ArgumentException();
+        throw new ArgumentException("text is invalid", nameof(text));
 
       var hitPoints = int.Parse(match.Groups["hit"].Value);
       var damage = int.Parse(match.Groups["damage"].Value);

@@ -41,9 +41,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "18-GIF", "18-GIF\18-GIF.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "19-Medicine", "19-Medicine\19-Medicine.csproj", "{E22950C5-91DA-48A1-A28B-0FF2B67A7B01}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "20-InfiniteElves", "20-InfiniteElves\20-InfiniteElves.csproj", "{44A2A243-6286-450E-AC67-0274C74D85E8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "20-InfiniteElves", "20-InfiniteElves\20-InfiniteElves.csproj", "{44A2A243-6286-450E-AC67-0274C74D85E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "21-RPG", "21-RPG\21-RPG.csproj", "{41E9D58F-6A0D-4C1D-83E9-66FF0D1CB299}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "21-RPG", "21-RPG\21-RPG.csproj", "{41E9D58F-6A0D-4C1D-83E9-66FF0D1CB299}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "22-WizardSimulator", "22-WizardSimulator\22-WizardSimulator.csproj", "{5EEACB46-0305-4065-8774-69D7AA5B759D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -135,6 +137,10 @@ Global
 		{41E9D58F-6A0D-4C1D-83E9-66FF0D1CB299}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{41E9D58F-6A0D-4C1D-83E9-66FF0D1CB299}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{41E9D58F-6A0D-4C1D-83E9-66FF0D1CB299}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EEACB46-0305-4065-8774-69D7AA5B759D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EEACB46-0305-4065-8774-69D7AA5B759D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EEACB46-0305-4065-8774-69D7AA5B759D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EEACB46-0305-4065-8774-69D7AA5B759D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
