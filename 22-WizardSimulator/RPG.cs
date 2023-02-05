@@ -114,6 +114,13 @@ namespace _22_WizardSimulator
       return state with { Player = newPlayer, Boss = newBoss, Magic = newMagic };
     }
 
+
+    private static State DoHard(State current)
+    {
+      var newPlayer = current.Player with { HitPoints = current.Player.HitPoints - 1 };
+      return current with { Player = newPlayer };
+    }
+
     private static int GetManaCosts(PlayerAction playerAction)
     {
       return playerAction switch
@@ -150,7 +157,7 @@ namespace _22_WizardSimulator
     [GeneratedRegex("Hit Points: (?<hit>\\d+)\\r?\\nDamage: (?<damage>\\d+)")]
     private static partial Regex RegExPerson();
 
-    internal static int GetMinManaUsedToWin(string text, int initialPlayerHitPoints, int initialPlayerMana)
+    internal static int GetMinManaUsedToWin(string text, int initialPlayerHitPoints, int initialPlayerMana, bool isHard)
     {
       var initialState = GetInitialState(text, initialPlayerHitPoints, initialPlayerMana);
 
@@ -172,6 +179,13 @@ namespace _22_WizardSimulator
         }
         else
         {
+          if (isHard)
+          {
+            current = DoHard(current);
+            if (current.Player.HitPoints <= 0)
+              continue;
+          }
+
           foreach (var playerAction in Enum.GetValues<PlayerAction>())
           {
             if (IsPlayerActionPossible(current.Magic, playerAction))
@@ -185,6 +199,7 @@ namespace _22_WizardSimulator
 
       throw new ApplicationException();
     }
+
 
     private static bool IsPlayerActionPossible(Magic magic, PlayerAction playerAction)
     {

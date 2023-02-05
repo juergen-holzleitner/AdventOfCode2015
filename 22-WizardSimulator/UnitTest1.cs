@@ -250,7 +250,7 @@ namespace _22_WizardSimulator
       var initialPlayerHitPoints = 10;
       var initialPlayerMana = 250;
 
-      var minManaUsed = RPG.GetMinManaUsedToWin(inputText, initialPlayerHitPoints, initialPlayerMana);
+      var minManaUsed = RPG.GetMinManaUsedToWin(inputText, initialPlayerHitPoints, initialPlayerMana, false);
 
       minManaUsed.Should().Be(226);
     }
@@ -262,7 +262,7 @@ namespace _22_WizardSimulator
       var initialPlayerHitPoints = 10;
       var initialPlayerMana = 250;
 
-      var minManaUsed = RPG.GetMinManaUsedToWin(inputText, initialPlayerHitPoints, initialPlayerMana);
+      var minManaUsed = RPG.GetMinManaUsedToWin(inputText, initialPlayerHitPoints, initialPlayerMana, false);
 
       minManaUsed.Should().Be(641);
     }
