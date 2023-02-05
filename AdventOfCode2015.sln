@@ -45,7 +45,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "20-InfiniteElves", "20-Infi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "21-RPG", "21-RPG\21-RPG.csproj", "{41E9D58F-6A0D-4C1D-83E9-66FF0D1CB299}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "22-WizardSimulator", "22-WizardSimulator\22-WizardSimulator.csproj", "{5EEACB46-0305-4065-8774-69D7AA5B759D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "22-WizardSimulator", "22-WizardSimulator\22-WizardSimulator.csproj", "{5EEACB46-0305-4065-8774-69D7AA5B759D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "23-TuringLock", "23-TuringLock\23-TuringLock.csproj", "{B6F0CB9D-555D-4835-A18D-CCCEE06786DD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -141,6 +143,10 @@ Global
 		{5EEACB46-0305-4065-8774-69D7AA5B759D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5EEACB46-0305-4065-8774-69D7AA5B759D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5EEACB46-0305-4065-8774-69D7AA5B759D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6F0CB9D-555D-4835-A18D-CCCEE06786DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6F0CB9D-555D-4835-A18D-CCCEE06786DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6F0CB9D-555D-4835-A18D-CCCEE06786DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6F0CB9D-555D-4835-A18D-CCCEE06786DD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
