@@ -49,6 +49,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "22-WizardSimulator", "22-Wi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "23-TuringLock", "23-TuringLock\23-TuringLock.csproj", "{B6F0CB9D-555D-4835-A18D-CCCEE06786DD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "24-Balance", "24-Balance\24-Balance.csproj", "{2FDE003C-DB80-4CE2-B4CD-B4C87E8AB7E0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -147,6 +149,10 @@ Global
 		{B6F0CB9D-555D-4835-A18D-CCCEE06786DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B6F0CB9D-555D-4835-A18D-CCCEE06786DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B6F0CB9D-555D-4835-A18D-CCCEE06786DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FDE003C-DB80-4CE2-B4CD-B4C87E8AB7E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FDE003C-DB80-4CE2-B4CD-B4C87E8AB7E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FDE003C-DB80-4CE2-B4CD-B4C87E8AB7E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FDE003C-DB80-4CE2-B4CD-B4C87E8AB7E0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
