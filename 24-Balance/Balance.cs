@@ -4,9 +4,9 @@ namespace _24_Balance
 {
   internal class Balance
   {
-    internal static long GetTargetWeight(long[] elements)
+    internal static long GetTargetWeight(long[] elements, int numGroups)
     {
-      return elements.Sum() / 3;
+      return elements.Sum() / numGroups;
     }
 
     internal static List<long> Parse(string input)
@@ -52,10 +52,10 @@ namespace _24_Balance
       }
     }
 
-    internal static IEnumerable<List<long>> EnumerateShortestGroupOf(string input)
+    internal static IEnumerable<List<long>> EnumerateShortestGroupOf(string input, int numGroups)
     {
       var elements = Parse(input).ToArray();
-      long groupWeight = GetTargetWeight(elements);
+      long groupWeight = GetTargetWeight(elements, numGroups);
 
       for (int groupSize = 1; groupSize <= elements.Length; ++groupSize)
       {
@@ -67,9 +67,9 @@ namespace _24_Balance
       throw new ApplicationException();
     }
 
-    internal static long GetSmallestQE(string input)
+    internal static long GetSmallestQE(string input, int numGroups)
     {
-      var groups = EnumerateShortestGroupOf(input);
+      var groups = EnumerateShortestGroupOf(input, numGroups);
       return (from g in groups let qe = g.Aggregate(1, (long a, long b) => a * b) orderby qe select qe).First();
     }
   }
